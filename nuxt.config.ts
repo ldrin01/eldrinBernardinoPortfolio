@@ -9,4 +9,5 @@ export default defineNuxtConfig({
     baseURL: '/eldrinBernardinoPortfolio/', // IMPORTANT: Replace 'my-nuxt-project' with your repository name. This is crucial for GitHub Pages.
     buildAssetsDir: 'assets' // This is the default, but good to be explicit
   },
+  modules: ['@nuxt/ui'],
 })
