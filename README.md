@@ -1,75 +1,47 @@
-# Nuxt Minimal Starter
+# Eldrin Bernardino — Portfolio
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A personal portfolio site showcasing UI/UX and web design work.
 
-## Setup
+🌐 **Live Site:** [https://ldrin01.github.io/eldrinBernardinoPortfolio/](https://ldrin01.github.io/eldrinBernardinoPortfolio/)
 
-Make sure to install dependencies:
+---
+
+## About
+
+This portfolio highlights selected projects across product design, web design, and UI/UX — built and maintained as a living document of my work and growth as a designer.
+
+## Tech Stack
+
+- Nuxt 3 (Static Site Generation)
+- Tailwind CSS
+- Deployed via GitHub Pages
+
+## Local Development
 
 ```bash
-# npm
+# Install dependencies
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Start dev server
 npm run dev
 
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+# Generate static output
+npm run generate
 ```
 
-## Production
+## Deployment
 
-Build the application for production:
+This site is deployed to GitHub Pages using `git subtree`:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+npm run generate
+git add .
+git commit -m "update"
+git subtree split --prefix .output/public -b gh-pages-temp
+git push origin gh-pages-temp:gh-pages --force
+git branch -D gh-pages-temp
 ```
 
-Locally preview production build:
+---
 
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Built by [Eldrin Bernardino](https://github.com/ldrin01) 
