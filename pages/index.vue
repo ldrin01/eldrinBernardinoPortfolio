@@ -2,35 +2,32 @@
   <div ref="scrollContainer" class="overflow-y-scroll h-screen" @scroll="onScroll">
     <!-- ORIGINAL -->
     <div id="original">
-      <section id="hero" class="min-h-screen flex items-center px-6 max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-12 items-center w-full py-20">
-          <div class="flex flex-col gap-6">
-            <p class="text-sm uppercase tracking-widest text-gray-400">UI/UX Designer · Systems Thinker · 3D Designer</p>
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight">Eldrin<br />Bernardino</h1>
-            <p class="text-lg text-gray-500 dark:text-gray-400 max-w-md">
+      <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- BG Image -->
+        <div
+          ref="heroBg"
+          class="absolute inset-0 bg-gray-200 dark:bg-gray-800 bg-cover bg-center scale-110"
+          :style="heroBgStyle"
+        >
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
+        </div>
+
+        <!-- Content -->
+        <div
+          ref="heroContent"
+          class="relative z-10 px-6 max-w-6xl mx-auto w-full py-20"
+          :style="heroContentStyle"
+        >
+          <div class="flex flex-col gap-6 max-w-2xl">
+            <p class="text-sm uppercase tracking-widest text-white/70">UI/UX Designer · Systems Thinker · 3D Designer</p>
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight text-white">Eldrin<br />Bernardino</h1>
+            <p class="text-lg text-white/70 max-w-md">
               4 years designing end-to-end digital solutions for local and international clients. Based in Quezon City, Metro Manila.
             </p>
             <div class="flex gap-4 flex-wrap">
-              <a href="#contact" class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3 rounded-full text-sm font-medium hover:opacity-80 transition-opacity">Get in touch</a>
-              <a href="#skills" class="border border-gray-300 dark:border-gray-700 px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">See my skills</a>
-            </div>
-          </div>
-          <!-- Image -->
-          <div class="flex justify-center md:justify-end">
-            <div class="relative w-72 h-72 md:w-96 md:h-96">
-              <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30"></div>
-              <img
-                v-if="heroImage"
-                :src="heroImage"
-                alt="Eldrin Bernardino"
-                class="relative z-10 w-full h-full object-cover rounded-3xl"
-              />
-              <div v-else class="relative z-10 w-full h-full rounded-3xl flex items-center justify-center text-gray-400 text-sm">
-                <div class="text-center">
-                  <div class="text-4xl mb-2">👤</div>
-                  <p>Your photo here</p>
-                </div>
-              </div>
+              <a href="#contact" class="bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-medium hover:opacity-80 transition-opacity">Get in touch</a>
+              <a href="#skills" class="border border-white/40 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/10 transition-colors">See my skills</a>
             </div>
           </div>
         </div>
@@ -85,7 +82,6 @@
       </section>
 
       <section id="contact" class="fade-in min-h-screen relative overflow-hidden flex items-center px-6 max-w-6xl mx-auto py-20">
-        <div class="parallax-bg absolute inset-0 bg-gray-50 dark:bg-gray-900 -z-10"></div>
         <div class="max-w-2xl relative z-10">
           <p class="text-sm uppercase tracking-widest text-gray-400 mb-4">Contact</p>
           <h2 class="text-4xl md:text-5xl font-bold mb-8">Let's work<br />together.</h2>
@@ -102,35 +98,26 @@
 
     <!-- CLONE -->
     <div id="clone" aria-hidden="true">
-      <section id="hero" class="min-h-screen flex items-center px-6 max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-12 items-center w-full py-20">
-          <div class="flex flex-col gap-6">
-            <p class="text-sm uppercase tracking-widest text-gray-400">UI/UX Designer · Systems Thinker · 3D Designer</p>
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight">Eldrin<br />Bernardino</h1>
-            <p class="text-lg text-gray-500 dark:text-gray-400 max-w-md">
+      <section class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- BG Image -->
+        <div
+          class="absolute inset-0 bg-gray-200 dark:bg-gray-800 bg-cover bg-center scale-110"
+          :style="{ backgroundImage: heroImage ? `url(${heroImage})` : 'none' }"
+        >
+          <div class="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
+        </div>
+
+        <!-- Content — no parallax on clone, just static -->
+        <div class="relative z-10 px-6 max-w-6xl mx-auto w-full py-20">
+          <div class="flex flex-col gap-6 max-w-2xl">
+            <p class="text-sm uppercase tracking-widest text-white/70">UI/UX Designer · Systems Thinker · 3D Designer</p>
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight text-white">Eldrin<br />Bernardino</h1>
+            <p class="text-lg text-white/70 max-w-md">
               4 years designing end-to-end digital solutions for local and international clients. Based in Quezon City, Metro Manila.
             </p>
             <div class="flex gap-4 flex-wrap">
-              <a href="#contact" class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3 rounded-full text-sm font-medium hover:opacity-80 transition-opacity">Get in touch</a>
-              <a href="#skills" class="border border-gray-300 dark:border-gray-700 px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors">See my skills</a>
-            </div>
-          </div>
-          <!-- Image -->
-          <div class="flex justify-center md:justify-end">
-            <div class="relative w-72 h-72 md:w-96 md:h-96">
-              <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30"></div>
-              <img
-                v-if="heroImage"
-                :src="heroImage"
-                alt="Eldrin Bernardino"
-                class="relative z-10 w-full h-full object-cover rounded-3xl"
-              />
-              <div v-else class="relative z-10 w-full h-full rounded-3xl flex items-center justify-center text-gray-400 text-sm">
-                <div class="text-center">
-                  <div class="text-4xl mb-2">👤</div>
-                  <p>Your photo here</p>
-                </div>
-              </div>
+              <a href="#contact" class="bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-medium hover:opacity-80 transition-opacity">Get in touch</a>
+              <a href="#skills" class="border border-white/40 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/10 transition-colors">See my skills</a>
             </div>
           </div>
         </div>
@@ -185,7 +172,6 @@
       </section>
 
       <section id="contact" class="fade-in min-h-screen relative overflow-hidden flex items-center px-6 max-w-6xl mx-auto py-20">
-        <div class="parallax-bg absolute inset-0 bg-gray-50 dark:bg-gray-900 -z-10"></div>
         <div class="max-w-2xl relative z-10">
           <p class="text-sm uppercase tracking-widest text-gray-400 mb-4">Contact</p>
           <h2 class="text-4xl md:text-5xl font-bold mb-8">Let's work<br />together.</h2>
@@ -244,15 +230,29 @@ const hobbies = [
   }
 ]
 
-const heroImage = ref(null)
-// To use your own photo later:
-// heroImage.value = '/images/eldrin.jpg'
+const heroBg = ref(null)
+const heroContent = ref(null)
+const heroBgStyle = ref({})
+const heroContentStyle = ref({})
+
+const heroImage = ref('/eldrinBernardinoPortfolio/eldrin.jpg')
 
 const sections = ['hero', 'about', 'skills', 'hobbies', 'contact']
 
 function onScroll() {
   const container = scrollContainer.value
   if (!container) return
+
+  const scrollTop = container.scrollTop
+
+  // Hero parallax
+  heroBgStyle.value = {
+    transform: `translateY(${scrollTop * 0.4}px)`,
+    backgroundImage: heroImage.value ? `url(${heroImage.value})` : 'none'
+  }
+  heroContentStyle.value = {
+    transform: `translateY(${scrollTop * 0.15}px)`
+  } 
 
   const original = document.getElementById('original')
   const originalHeight = original.offsetHeight
