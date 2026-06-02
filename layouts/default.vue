@@ -13,19 +13,13 @@
             </a>
           </li>
           <li>
-            <button @click="toggleDark" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-              <span v-if="isDark">☀️</span>
-              <span v-else>🌙</span>
-            </button>
+            <ThemeToggle />
           </li>
         </ul>
 
         <!-- Mobile Right: dark toggle + hamburger -->
         <div class="flex items-center gap-2 md:hidden">
-          <button @click="toggleDark" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-            <span v-if="isDark">☀️</span>
-            <span v-else>🌙</span>
-          </button>
+          <ThemeToggle />
           <button @click="menuOpen = !menuOpen" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
             <span v-if="menuOpen">✕</span>
             <span v-else>☰</span>
@@ -57,7 +51,6 @@
 </template>
 
 <script setup>
-const isDark = ref(false)
 const menuOpen = ref(false)
 const activeSection = ref('hero')
 
@@ -68,11 +61,6 @@ const navItems = [
   { id: 'hobbies', label: 'Life' },
   { id: 'contact', label: 'Contact' }
 ]
-
-function toggleDark() {
-  isDark.value = !isDark.value
-  document.documentElement.classList.toggle('dark', isDark.value)
-}
 
 onMounted(() => {
   const sections = navItems.map(i => i.id)
