@@ -50,7 +50,7 @@
         <div class="w-full">
           <p class="text-sm uppercase tracking-widest text-gray-400 mb-4">Skills</p>
           <h2 class="text-4xl md:text-5xl font-bold mb-12">What I bring<br />to the table.</h2>
-          <div class="grid md:grid-cols-3 gap-6">
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div v-for="group in skills" :key="group.title"
               class="p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
               <h3 class="font-semibold text-xs uppercase tracking-widest text-gray-400 mb-6">{{ group.title }}</h3>
@@ -140,7 +140,7 @@
         <div class="w-full">
           <p class="text-sm uppercase tracking-widest text-gray-400 mb-4">Skills</p>
           <h2 class="text-4xl md:text-5xl font-bold mb-12">What I bring<br />to the table.</h2>
-          <div class="grid md:grid-cols-3 gap-6">
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div v-for="group in skills" :key="group.title"
               class="p-6 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
               <h3 class="font-semibold text-xs uppercase tracking-widest text-gray-400 mb-6">{{ group.title }}</h3>
