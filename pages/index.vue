@@ -204,6 +204,10 @@ const skills = [
   {
     title: 'Analytical & Project',
     items: ['Requirement Gathering', 'Client Presentations', 'Cross-functional Collaboration', 'Process Management']
+  },
+  {
+    title: 'AI Coding',
+    items: ['Agentic AI', 'Claude and opencode', 'Skill creation', 'Maintenance']
   }
 ]
 
